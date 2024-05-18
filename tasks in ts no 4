@@ -1,0 +1,145 @@
+// Task 1: Function to Insert a Value at a Specified Index Using Splice
+function insertValue(array, index, value) {
+    array.splice(index, 0, value);
+    return array;
+}
+
+// Task 2: Simple Shopping Cart Program
+let cart = [];
+
+function addItem(item) {
+    cart.push(item);
+    console.log('Cart:', cart);
+}
+
+function removeItem(index) {
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1);
+    }
+    console.log('Cart:', cart);
+}
+
+function updateQuantity(index, quantity) {
+    if (index >= 0 && index < cart.length) {
+        cart[index].quantity = quantity;
+    }
+    console.log('Cart:', cart);
+}
+
+// Task 3: Print the First 25 Integers Using a While Loop
+function printFirst25Integers() {
+    let i = 1;
+    while (i <= 25) {
+        console.log(i);
+        i++;
+    }
+}
+
+// Task 4: Print the First 10 Even Numbers Using a While Loop
+function printFirst10EvenNumbers() {
+    let count = 0;
+    let num = 1;
+    while (count < 10) {
+        if (num % 2 === 0) {
+            console.log(num);
+            count++;
+        }
+        num++;
+    }
+}
+
+// Task 5: Calculate and Return the Factorial of a Number Using a While Loop
+function factorial(n) {
+    let result = 1;
+    let i = n;
+    while (i > 0) {
+        result *= i;
+        i--;
+    }
+    return result;
+}
+
+// Task 6: Remove Negative Numbers from an Array
+function removeNegatives(array) {
+    let i = 0;
+    while (i < array.length) {
+        if (array[i] < 0) {
+            array.splice(i, 1);
+        } else {
+            i++;
+        }
+    }
+    return array;
+}
+
+// Task 7: Calculate the Sum of All Numbers in an Array Using a While Loop
+function sumArray(array) {
+    let sum = 0;
+    let i = 0;
+    while (i < array.length) {
+        sum += array[i];
+        i++;
+    }
+    return sum;
+}
+
+// Task 8: Convert Celsius to Fahrenheit Using a While Loop
+function convertCelsiusToFahrenheit(celsiusTemperatures) {
+    let fahrenheitTemperatures = [];
+    let i = 0;
+    while (i < celsiusTemperatures.length) {
+        let fahrenheit = (celsiusTemperatures[i] * 9/5) + 32;
+        fahrenheitTemperatures.push(fahrenheit);
+        i++;
+    }
+    return fahrenheitTemperatures;
+}
+
+// Task 9: Remove All Odd Numbers from an Array
+function removeOdds(array) {
+    let i = 0;
+    while (i < array.length) {
+        if (array[i] % 2 !== 0) {
+            array.splice(i, 1);
+        } else {
+            i++;
+        }
+    }
+    return array;
+}
+
+// Example usages for all tasks:
+
+// Task 1 Example
+let arr = [1, 2, 3, 5];
+console.log(insertValue(arr, 3, 4));  // Output: [1, 2, 3, 4, 5]
+
+// Task 2 Example
+addItem({ name: 'Apple', quantity: 3 });
+addItem({ name: 'Banana', quantity: 2 });
+removeItem(0);
+updateQuantity(0, 5);
+
+// Task 3 Example
+printFirst25Integers();
+
+// Task 4 Example
+printFirst10EvenNumbers();
+
+// Task 5 Example
+console.log(factorial(5));  // Output: 120
+
+// Task 6 Example
+let numbersWithNegatives = [1, -2, 3, -4, 5];
+console.log(removeNegatives(numbersWithNegatives));  // Output: [1, 3, 5]
+
+// Task 7 Example
+console.log(sumArray([1, 2, 3, 4]));  // Output: 10
+
+// Task 8 Example
+let celsiusTemperatures = [0, 20, 30, 40];
+console.log(convertCelsiusToFahrenheit(celsiusTemperatures));  // Output: [32, 68, 86, 104]
+
+// Task 9 Example
+let numbersWithOdds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(removeOdds(numbersWithOdds));  // Output: [2, 4, 6, 8]
